@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<link href="lib/system/system.css" rel="stylesheet" type="text/css"/>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		<link href="lib/party/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="lib/system/dialog.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="lib/party/jquery-3.3.1/jquery.min.js"></script>
+		<script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script>
+		<script type="text/javascript" src="lib/system/util.js"></script>
+		<script type="text/javascript" src="lib/system/system.js"></script>
+		<script type="text/javascript" src="lib/common.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="lib/system/dialog.js"></script>
+		
+	</head>
+	<body>
+		<div id="card" class="win-body">
+			<div class="body-left">
+				<div class="left-top">
+					<div class="l-t-img">
+						<i class="fa fa-envelope"></i>
+					</div>
+				</div>
+
+				<div class="left-action">
+					<div class="l-a-item">
+						<ul>
+							<li data-action="act" data-url="createEmail.html" data-index="0">
+								<i class="fa fa-plus"></i>
+							</li>
+							<li data-action="act" data-url="inbox.html" data-index="1">
+								<i class="fa fa-envelope-o"></i>
+							</li>
+							<li data-action="act" data-url="userManager.html" data-index="2">
+								<i class="fa fa-user-o"></i>
+							</li>
+							<li data-action="act" data-url="addressBook.html" data-index="3">
+								<i class="fa fa-address-book-o"></i>
+							</li>
+							<!-- <li data-action="act" data-url="inbox-vue.html" data-index="4">
+								<i class="fa fa-bug"></i>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+
+				<div class="left-del">
+					<div class="l-d-img">
+						<i name="syscog" class="fa fa-cog" title="设置"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="body-right">
+				<div class="b-right-top">
+
+					<div class="r-t-account">
+						<div class="account-fre">
+							<div class="fre-box" title="刷新邮箱">
+								<i name="refresh-mail" class="fa fa-refresh"></i>
+							</div>
+						</div>
+						<div class="account-box">
+							<p name="userEmail"></p>
+						</div>
+						<div class="accList-box">
+							<ul class="accList-ul">
+							</ul>
+						</div>
+					</div>
+
+					<div class="region" style="-webkit-app-region: drag">
+						
+					</div>
+
+					<div class="r-t-winact">
+						<button type="button" id="min" class="win-but" onselectstart="return false">
+							<i class="fa fa-minus fa-2x"></i>
+						</button>
+						<button type="button" id="clo" class="win-but" onselectstart="return false">
+							<i class="fa fa-close fa-2x"></i>
+						</button>
+					</div>
+				</div>
+				<div class="b-right-main">
+					<div class="pointer-box"></div>
+					<webview id="main" src="pages/wait.html" nodeintegration></webview>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog-msg">
+			<p class="msg-info"></p>
+		</div>
+
+		<div name="chooiseuser" class="chooise-box">
+			<div class="chooise-box-msg">
+				<i class="fa fa-spinner fa-spin"></i>
+				<span>正在登录，请稍后</span>
+			</div>
+		</div>
+
+		<!-- <div class="dialog">
+			<div class="dialog-box">
+				<div class="dialog-row">
+					<i class="fa fa-spinner fa-spin"></i>
+				</div>
+				<div class="dialog-row">
+					<p class="dialog-text">正在登录，请稍后正在登录，请稍后正在登录，请稍后正在登录，请稍后正在登录，请稍后正在登录，请稍后正在登录，请稍后</p>
+				</div>
+				<div class="dialog-line"></div>
+				<div class="dialog-row">
+					<button class="dialog-but dia-confirm">确定</button>
+					<button class="dialog-but dia-cancel">取消</button>
+				</div>
+			</div>
+		</div> -->
+	</body>
+
+	<!-- <script>
+		var result = "result"
+		$.dialog({
+			el:"body",
+			type:"wait",
+			msg:"测试",
+			confirm:function(){
+				console.log(result)
+				console.log("confirm")
+			},
+			cancel:function(){
+				console.log('cancel')
+			}
+		})
+		window.setTimeout(function(){
+			$.closeDialog()
+		},2000)
+	</script> -->
+</html>
