@@ -13,7 +13,7 @@ import sys
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('index.html')
+        self.render('inbox.html')
 
 
 
@@ -33,7 +33,9 @@ def start_server():
 
     app = tornado.web.Application(
         handlers=[(r'/', IndexHandler), (r'/poem', PoemPageHandler)],
-        template_path = os.path.join(os.path.dirname(__file__), "templates")
+        template_path = os.path.join(os.path.dirname(__file__), "templates"),
+        static_path = os.path.join(os.path.dirname(__file__), 'static'),
+
     )
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen("8888")
