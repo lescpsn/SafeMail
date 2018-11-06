@@ -44,7 +44,7 @@ def start_server():
             (r"/((assets|css|js|img|fonts)/.*)", tornado.web.StaticFileHandler, {"path": "static"}),
         
         ],
-        template_path = os.path.join(os.path.dirname(__file__), "templates"),
+        template_path = os.path.join(os.path.dirname(__file__), "static"),
         **settings
 
     )
