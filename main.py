@@ -31,10 +31,21 @@ def start_server():
 
     asyncio.set_event_loop(asyncio.new_event_loop())
 
+
+    settings = {
+        # "static_path": os.path.join(os.path.dirname(__file__), "static"),
+        'static_path': 'static',
+        # 'static_url_prefix': '/static/',
+    }
+
+
     app = tornado.web.Application(
-        handlers=[(r'/', IndexHandler), (r'/poem', PoemPageHandler)],
+        handlers=[(r'/', IndexHandler), (r'/poem', PoemPageHandler),
+            (r"/((assets|css|js|img|fonts)/.*)", tornado.web.StaticFileHandler, {"path": "static"}),
+        
+        ],
         template_path = os.path.join(os.path.dirname(__file__), "templates"),
-        static_path = os.path.join(os.path.dirname(__file__), 'static'),
+        **settings
 
     )
     http_server = tornado.httpserver.HTTPServer(app)
