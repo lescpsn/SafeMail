@@ -13,7 +13,7 @@ import sys
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('inbox.html')
+        self.render('index.html')
 
 
 
